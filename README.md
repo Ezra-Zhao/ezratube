@@ -2,7 +2,8 @@
 
 **EzraTube — Ezra Zhao's personal picks.** 600 videos, and not one of them came from YouTube's algorithm or an AI-generated list: every video was recommended by a real person in a Hacker News comment (2007–2026), and every card quotes the recommender's own words with a link to the original comment. Sifted from 261,835 video-linking HN comments with a rules-only pipeline — regex extraction, recommendation-signal scoring, keyword topics — with zero LLM calls. Inspired by Andrej Karpathy's HackerTube, built the cheap way.
 
-🔗 **Live / 在线地址**：https://1c1ee475695fc5fd-87-81-230-78.serveousercontent.com （serveo 隧道地址，变更时以本站最新地址为准）
+🔗 **Live / 在线地址**：https://ezra-zhao.github.io/ezratube/ （GitHub Pages 永久地址，对外分享用这个）
+备用：serveo 隧道地址（临时，重启会变）https://1c1ee475695fc5fd-87-81-230-78.serveousercontent.com
 
 > 数据与版权说明：推荐评论来自 Hacker News 公开评论存档，摘录为原文并附原评论链接；本站只做索引与跳转，**视频版权归原作者与 YouTube 创作者所有**。
 
@@ -10,7 +11,8 @@
 
 ## 怎么打开
 
-- 公网窗口（serveo 隧道，地址每次重开会变）：见交付报告里的当前 URL；重开窗口跑 `bash open-window.sh`（本地服务 8770 + 隧道，与教会系统的 8765 互不干扰）。
+- 正式地址（GitHub Pages，永久）：https://ezra-zhao.github.io/ezratube/
+- 公网窗口（serveo 隧道，临时备用，地址每次重开会变）：见交付报告里的当前 URL；重开窗口跑 `bash open-window.sh`（本地服务 8770 + 隧道，与教会系统的 8765 互不干扰）。
 - 本地：`cd ~/workspace/ezratube && python3 -m http.server 8770` 后打开 http://127.0.0.1:8770/
 
 ## 界面功能
