@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+cache/
+matches.jsonl
+matches_algolia.jsonl
+matches_parquet_partial.jsonl
+oembed_cache.json
+algolia_state.json
+*.log
+share-kit.md

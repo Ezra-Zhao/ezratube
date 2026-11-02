@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EzraTube — 只看 HN 网友真心推荐的视频</title>
+<style>
+  :root{
+    --bg:#0f0f0f; --panel:#1f1f1f; --panel2:#272727; --text:#f1f1f1;
+    --sub:#aaa; --accent:#ff0033; --gold:#d4af37; --line:#303030;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text);
+       font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;}
+  header{position:sticky; top:0; z-index:10; background:rgba(15,15,15,.96);
+         padding:12px 20px; border-bottom:1px solid var(--line);}
+  .hrow{display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+  .logo{font-size:24px; font-weight:800; letter-spacing:.5px; white-space:nowrap;}
+  .logo span{color:var(--accent);}
+  .tagline{color:var(--sub); font-size:13px;}
+  .search{flex:1; min-width:220px; display:flex;}
+  .search input{flex:1; padding:10px 16px; border-radius:20px 0 0 20px;
+    border:1px solid var(--line); background:#121212; color:var(--text);
+    font-size:15px; outline:none;}
+  .search button{padding:10px 22px; border-radius:0 20px 20px 0; border:1px solid var(--line);
+    border-left:none; background:var(--panel2); color:var(--text); cursor:pointer; font-size:15px;}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+  .chip{padding:6px 14px; border-radius:8px; background:var(--panel2); color:var(--text);
+    font-size:13.5px; cursor:pointer; border:none; white-space:nowrap;}
+  .chip:hover{background:#3a3a3a;}
+  .chip.on{background:#fff; color:#000; font-weight:600;}
+  .chip .n{opacity:.55; font-size:12px; margin-left:4px;}
+  main{padding:20px; max-width:1760px; margin:0 auto;}
+  .meta{color:var(--sub); font-size:13px; margin-bottom:16px;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px 16px;}
+  .card{cursor:pointer;}
+  .thumb{position:relative; border-radius:12px; overflow:hidden; aspect-ratio:16/9; background:#000;}
+  .thumb img{width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .18s ease;}
+  .card:hover .thumb img{transform:scale(1.04);}
+  .rec{position:absolute; right:8px; bottom:8px; background:rgba(0,0,0,.82);
+    color:#ffd968; font-size:12px; padding:3px 8px; border-radius:5px;}
+  .ttl{font-size:15.5px; font-weight:600; line-height:1.4; margin-top:10px;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+  .auth{color:var(--sub); font-size:13px; margin-top:4px;}
+  .quote{margin-top:8px; background:var(--panel); border-left:3px solid var(--gold);
+    padding:8px 11px; border-radius:0 8px 8px 0; font-size:13.5px; line-height:1.55; color:#e6e6e6;}
+  .quote .from{display:block; margin-top:5px; color:var(--sub); font-size:12px;}
+  .quote .from a{color:#8ab4f8; text-decoration:none;}
+  .quote .from a:hover{text-decoration:underline;}
+  .empty{color:var(--sub); text-align:center; padding:60px 0; font-size:15px;}
+  footer{color:#666; font-size:12.5px; text-align:center; padding:26px 12px 34px; line-height:1.7;}
+  @media (max-width:560px){ .grid{grid-template-columns:1fr 1fr; gap:16px 10px;}
+    .ttl{font-size:13.5px;} .quote{display:none;} }
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <div class="logo">Ezra<span>Tube</span></div>
+    <div class="search">
+      <input id="q" type="search" placeholder="搜索标题、频道或推荐语…" autocomplete="off">
+      <button id="qbtn">搜索</button>
+    </div>
+    <div class="tagline">Ezra Zhao 的精选 · 600 个来自 Hacker News 真人推荐的视频 · <a href="https://github.com/Ezra-Zhao" target="_blank" rel="noopener" style="color:#8ab4f8;text-decoration:none">GitHub</a></div>
+  </div>
+  <div class="chips" id="chips"></div>
+</header>
+<main>
+  <div class="meta" id="meta">正在加载数据…</div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">没有匹配的视频，换个关键词或分类试试。</div>
+</main>
+<footer>
+  数据来源：Hacker News 历史评论（open-index/hacker-news 数据集，Hugging Face）· 仿 Karpathy「HackerTube」的筛法：规则过滤 → 推荐信号打分 → 主题分类<br>
+  每张卡片的推荐语均摘自真实 HN 评论原文，点击卡片在 YouTube 打开视频 · EzraTube v1
+</footer>
+<script>
+let DATA = null, curTopic = 'all', curQ = '';
+
+function esc(s){ const d = document.createElement('div'); d.textContent = s ?? ''; return d.innerHTML; }
+
+function render(){
+  const grid = document.getElementById('grid');
+  const q = curQ.trim().toLowerCase();
+  const list = DATA.videos.filter(v => {
+    if (curTopic !== 'all' && v.topic !== curTopic) return false;
+    if (!q) return true;
+    return (v.title + ' ' + v.author + ' ' + v.excerpt).toLowerCase().includes(q);
+  });
+  document.getElementById('meta').textContent =
+    `共 ${DATA.stats.videos_final} 个视频 · ${DATA.stats.topics} 个主题 · 当前显示 ${list.length} 个` +
+    ` · 数据生成于 ${DATA.generated_at.slice(0,10)}`;
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+  grid.innerHTML = list.map(v => `
+    <div class="card" onclick="window.open('${v.url}','_blank')">
+      <div class="thumb">
+        <img loading="lazy" src="${v.thumb}" alt=""
+             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/mqdefault.jpg'">
+        ${v.n_rec > 1 ? `<div class="rec">♥ ${v.n_rec} 人推荐</div>` : ''}
+      </div>
+      <div class="ttl">${esc(v.title)}</div>
+      <div class="auth">${esc(v.author)} · ${esc(v.topic_name)}</div>
+      <div class="quote">「${esc(v.excerpt)}」
+        <span class="from">—— HN 网友 @${esc(v.hn_by)} · ${esc(v.hn_date)} ·
+          <a href="${v.hn_url}" target="_blank" onclick="event.stopPropagation()">原评论</a></span>
+      </div>
+    </div>`).join('');
+}
+
+function renderChips(){
+  const box = document.getElementById('chips');
+  const mk = (id, name, n) =>
+    `<button class="chip ${curTopic===id?'on':''}" data-t="${id}">${esc(name)}<span class="n">${n}</span></button>`;
+  box.innerHTML = mk('all', '全部', DATA.stats.videos_final) +
+    DATA.topics.map(t => mk(t.id, t.name, t.count)).join('');
+  box.querySelectorAll('.chip').forEach(b =>
+    b.addEventListener('click', () => { curTopic = b.dataset.t; renderChips(); render(); }));
+}
+
+fetch('data.json').then(r => r.json()).then(d => {
+  DATA = d; renderChips(); render();
+}).catch(e => {
+  document.getElementById('meta').textContent = '数据加载失败：' + e;
+});
+
+const qEl = document.getElementById('q');
+qEl.addEventListener('input', () => { curQ = qEl.value; render(); });
+document.getElementById('qbtn').addEventListener('click', () => { curQ = qEl.value; render(); });
+</script>
+</body>
+</html>
