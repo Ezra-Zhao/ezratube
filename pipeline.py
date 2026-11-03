@@ -409,6 +409,14 @@ def build(max_candidates, top_n, max_final=600):
     log(f"build done: {len(out_videos)} videos, {len(topics_out)} topics -> {DATA_JSON}")
     for t in topics_out:
         log(f"  topic {t['name']}: {t['count']}")
+    # 自家两个频道走 YouTube RSS 并入 own_channels；失败只跳过，不拖垮主站构建
+    try:
+        import mychannel
+        chans = mychannel.attach(DATA_JSON)
+        log("own channels attached: " + ", ".join(
+            f"{c['name']} {len(c['videos'])} videos" for c in chans))
+    except Exception as e:
+        log(f"own channels attach skipped: {e}")
     return data
 
 

@@ -16,6 +16,7 @@
 
 ## 界面功能
 
+- 页面顶部有置顶专栏「我的频道」：Ezra 自己的两个 YouTube 频道（Ezra-Zhao 主频道、Ezra Daily 每日速报）各一栏、各最新 15 条上传，卡片带平实的「我的频道」小标识；数据来自 YouTube RSS（免 API key），与下方 HN 精选网格分开，不参与主题筛选。文案口径（Ezra 定）：只用平实标识，栏目说明一句话带过，不用自夸字眼
 - 仿 YouTube 的深色视频网格：缩略图、标题、频道、主题、一句 HN 推荐语（带评论者与原评论链接）
 - 顶部主题分类 chips（约 10–15 类）+ 搜索框（搜标题/频道/推荐语）
 - 点击卡片 → 新标签在 YouTube 播放
@@ -49,6 +50,7 @@ cp matches_algolia.jsonl matches.jsonl
 ./.venv/bin/python pipeline.py scan     # → matches.jsonl，已下分片会跳过
 ./.venv/bin/python pipeline.py build
 # 或一把梭： ./.venv/bin/python pipeline.py all
+# 只刷新自家频道（不重跑主站管线）： ./.venv/bin/python mychannel.py
 ```
 
 - 参数：`--year-from/--year-to` 限定年份，`--max-candidates` 候选上限（默认 800），`--top-n` 做 oEmbed 的前 N 名（默认 720），`--max-final` 最终入选上限（默认 600）。
@@ -68,7 +70,7 @@ cp matches_algolia.jsonl matches.jsonl
 
 1. **中段帧缩略图**：对入选视频抽 50% 处真实帧替换官方封面（Karpathy 原手法，反标题党）。
 2. **接代学管线**：卡片加「让豆豆代看」入口，选中视频走现有转写→提炼稿→「开车听」音频管线，前端负责选片、后端负责代学交付。
-3. **增源**：Ezra 订阅的 YouTube 频道、X 书签、代学线已处理过的讲座清单，并入同一前端（多源信号合并排序）。
+3. **增源**：自家两个 YouTube 频道已接入（2026-11-03，「我的频道」置顶专栏，`mychannel.py`）；待续：Ezra 订阅的 YouTube 频道、X 书签、代学线已处理过的讲座清单，并入同一前端（多源信号合并排序）。
 4. **LLM 打标复核**：对规则分类的低置信样本，用 review_pool 免费跨模型通道小批量复核（仍守候选上限，不大规模烧）。
 5. **父故事分数回查**：用评论的 parent 链回查故事 score，给排序加权。
 6. **ForYou 个性化**：仿原版，本地会话存观看/收藏状态做简单重排（无账号）。
@@ -76,8 +78,9 @@ cp matches_algolia.jsonl matches.jsonl
 ## 文件清单
 
 - `index.html` — 前端（纯静态，无构建）
-- `data.json` — 站点数据（管线产出）
-- `pipeline.py` — 管线（scan/build/all）
+- `data.json` — 站点数据（管线产出；含 `own_channels` 自家频道字段）
+- `pipeline.py` — 管线（scan/build/all；build 结束自动附加自家频道）
+- `mychannel.py` — 自家频道取数：抓两个频道（Ezra-Zhao `UCOpe9VOkkdmuWcKNuA-M4vQ`、Ezra Daily 每日速报 `UCsxU-VYZH9hMw1HVaPaS6KA`）的 YouTube RSS 并入 data.json；可单独运行刷新，单频道失败保留旧条目
 - `algolia_extract.py` — Algolia 快速取数（自适应时间二分；状态存 `algolia_state.json`，可断点续跑）
 - `prefetch.py` — 并行预下载（可选）
 - `open-window.sh` — 起本地服务 + serveo 公网窗口（端口 8770）

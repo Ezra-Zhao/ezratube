@@ -9687,5 +9687,237 @@
    "n_rec": 1,
    "score": 20.18
   }
+ ],
+ "own_channels": [
+  {
+   "name": "Ezra-Zhao",
+   "channel_id": "UCOpe9VOkkdmuWcKNuA-M4vQ",
+   "channel_url": "https://www.youtube.com/channel/UCOpe9VOkkdmuWcKNuA-M4vQ",
+   "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCOpe9VOkkdmuWcKNuA-M4vQ",
+   "note": "主频道",
+   "fetched_at": "2026-11-03T21:41:43+00:00",
+   "videos": [
+    {
+     "id": "JUhFFTQJz-k",
+     "title": "绝境自救·第16集｜听见雷声，你就在射程里",
+     "url": "https://www.youtube.com/watch?v=JUhFFTQJz-k",
+     "thumb": "https://i3.ytimg.com/vi/JUhFFTQJz-k/hqdefault.jpg",
+     "published": "2026-11-03"
+    },
+    {
+     "id": "7GDioDJp--Y",
+     "title": "长寿前沿日报｜11月2日：一年两针防艾滋病毒，仿制药获初步批准",
+     "url": "https://www.youtube.com/watch?v=7GDioDJp--Y",
+     "thumb": "https://i4.ytimg.com/vi/7GDioDJp--Y/hqdefault.jpg",
+     "published": "2026-11-03"
+    },
+    {
+     "id": "OUcfhDIYX6I",
+     "title": "你的网站有没有漏洞？别等黑客告诉你",
+     "url": "https://www.youtube.com/watch?v=OUcfhDIYX6I",
+     "thumb": "https://i4.ytimg.com/vi/OUcfhDIYX6I/hqdefault.jpg",
+     "published": "2026-11-03"
+    },
+    {
+     "id": "HxfC1LKoNLE",
+     "title": "车辆维护与维修｜第14集 发动机故障灯亮了，还能开吗？",
+     "url": "https://www.youtube.com/watch?v=HxfC1LKoNLE",
+     "thumb": "https://i1.ytimg.com/vi/HxfC1LKoNLE/hqdefault.jpg",
+     "published": "2026-11-03"
+    },
+    {
+     "id": "vQlofe5T4wU",
+     "title": "绝境自救·第15集｜跳下去救人，多数一起沉",
+     "url": "https://www.youtube.com/watch?v=vQlofe5T4wU",
+     "thumb": "https://i3.ytimg.com/vi/vQlofe5T4wU/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "Bmz1HPUwOv4",
+     "title": "押尼珥来归 | 圣经故事动漫连载 第20集 #Shorts",
+     "url": "https://www.youtube.com/watch?v=Bmz1HPUwOv4",
+     "thumb": "https://i3.ytimg.com/vi/Bmz1HPUwOv4/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "T_oFNrjy-Es",
+     "title": "网站打不开先查哪三招？DNS 排障实战",
+     "url": "https://www.youtube.com/watch?v=T_oFNrjy-Es",
+     "thumb": "https://i1.ytimg.com/vi/T_oFNrjy-Es/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "T2viMk2zyNo",
+     "title": "实测：AI 给 GPU 集群分诊，一次分出 10 个 critical",
+     "url": "https://www.youtube.com/watch?v=T2viMk2zyNo",
+     "thumb": "https://i1.ytimg.com/vi/T2viMk2zyNo/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "H5De_aZduk0",
+     "title": "几百个文件一次归档好：Python 实战·文件整理",
+     "url": "https://www.youtube.com/watch?v=H5De_aZduk0",
+     "thumb": "https://i1.ytimg.com/vi/H5De_aZduk0/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "dPPqMBc07wo",
+     "title": "混沌不是神缺席的证据，是祂动工的现场",
+     "url": "https://www.youtube.com/watch?v=dPPqMBc07wo",
+     "thumb": "https://i1.ytimg.com/vi/dPPqMBc07wo/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "tu8-ylN2CM4",
+     "title": "神不在时间里面，时间在神里面｜创世记开篇密码",
+     "url": "https://www.youtube.com/watch?v=tu8-ylN2CM4",
+     "thumb": "https://i1.ytimg.com/vi/tu8-ylN2CM4/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "74iUDqlE9lw",
+     "title": "福音的第一个音符，竟在伊甸园就响起了",
+     "url": "https://www.youtube.com/watch?v=74iUDqlE9lw",
+     "thumb": "https://i4.ytimg.com/vi/74iUDqlE9lw/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "E6O_VAZ0c9Y",
+     "title": "硅谷科技日报｜10月30日：万亿参数模型，权重直接开放下载",
+     "url": "https://www.youtube.com/watch?v=E6O_VAZ0c9Y",
+     "thumb": "https://i2.ytimg.com/vi/E6O_VAZ0c9Y/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "CImvKfm7-I4",
+     "title": "大喜的信息｜原创赞美诗（歌词视频）",
+     "url": "https://www.youtube.com/watch?v=CImvKfm7-I4",
+     "thumb": "https://i4.ytimg.com/vi/CImvKfm7-I4/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "kHmQSCM6FHc",
+     "title": "以马内利｜原创赞美诗（歌词视频）",
+     "url": "https://www.youtube.com/watch?v=kHmQSCM6FHc",
+     "thumb": "https://i4.ytimg.com/vi/kHmQSCM6FHc/hqdefault.jpg",
+     "published": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "name": "Ezra Daily 每日速报",
+   "channel_id": "UCsxU-VYZH9hMw1HVaPaS6KA",
+   "channel_url": "https://www.youtube.com/channel/UCsxU-VYZH9hMw1HVaPaS6KA",
+   "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCsxU-VYZH9hMw1HVaPaS6KA",
+   "note": "每日速报频道 · @EzraDaily777",
+   "fetched_at": "2026-11-03T21:41:44+00:00",
+   "videos": [
+    {
+     "id": "1aIBWuhVfoA",
+     "title": "湾区本地速报 2026-11-03｜今天就是选举日，投票中心开到晚上8点",
+     "url": "https://www.youtube.com/watch?v=1aIBWuhVfoA",
+     "thumb": "https://i2.ytimg.com/vi/1aIBWuhVfoA/hqdefault.jpg",
+     "published": "2026-11-03"
+    },
+    {
+     "id": "_Ne4IghnCRA",
+     "title": "湾区福利速报｜2026年11月2日：3个新机会：圣何塞圣诞礼物登记今天开启",
+     "url": "https://www.youtube.com/watch?v=_Ne4IghnCRA",
+     "thumb": "https://i4.ytimg.com/vi/_Ne4IghnCRA/hqdefault.jpg",
+     "published": "2026-11-03"
+    },
+    {
+     "id": "6NdrOdLwPfQ",
+     "title": "《美国百指日报》2026-11-01｜周日无新数据，异常榜存档确认；周五就业报告预期分歧明显",
+     "url": "https://www.youtube.com/watch?v=6NdrOdLwPfQ",
+     "thumb": "https://i3.ytimg.com/vi/6NdrOdLwPfQ/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "bpwDHq2mOp4",
+     "title": "湾区本地速报 2026-11-02｜明天选举日，今天提前投票到下午五点",
+     "url": "https://www.youtube.com/watch?v=bpwDHq2mOp4",
+     "thumb": "https://i3.ytimg.com/vi/bpwDHq2mOp4/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "rQKG3WCx9BU",
+     "title": "美国百指日报·晚间速报｜11月1日：周日无新数据，明天制造业打头阵，周五就业定胜负",
+     "url": "https://www.youtube.com/watch?v=rQKG3WCx9BU",
+     "thumb": "https://i3.ytimg.com/vi/rQKG3WCx9BU/hqdefault.jpg",
+     "published": "2026-11-02"
+    },
+    {
+     "id": "A5QomcTZnfA",
+     "title": "《美国百指日报》2026-10-30｜实际利率2.47%钉在异常高位，净出口单期恶化38%",
+     "url": "https://www.youtube.com/watch?v=A5QomcTZnfA",
+     "thumb": "https://i2.ytimg.com/vi/A5QomcTZnfA/hqdefault.jpg",
+     "published": "2026-11-01"
+    },
+    {
+     "id": "ZOLyD7dqr3Y",
+     "title": "《美国百指日报》2026-10-31｜30年房贷利率降到7.24%创本月最低，隔夜逆回购月末跳增逾11倍",
+     "url": "https://www.youtube.com/watch?v=ZOLyD7dqr3Y",
+     "thumb": "https://i3.ytimg.com/vi/ZOLyD7dqr3Y/hqdefault.jpg",
+     "published": "2026-11-01"
+    },
+    {
+     "id": "8wYZCYwIN3I",
+     "title": "美国百指日报·晚间速报｜10月31日：周六无新数据，房贷降到7.24%本月最低，信用利差走阔",
+     "url": "https://www.youtube.com/watch?v=8wYZCYwIN3I",
+     "thumb": "https://i1.ytimg.com/vi/8wYZCYwIN3I/hqdefault.jpg",
+     "published": "2026-11-01"
+    },
+    {
+     "id": "ikhq3VM6Auw",
+     "title": "湾区本地速报 2026-10-31｜110个投票中心今天全部开放",
+     "url": "https://www.youtube.com/watch?v=ikhq3VM6Auw",
+     "thumb": "https://i2.ytimg.com/vi/ikhq3VM6Auw/hqdefault.jpg",
+     "published": "2026-10-31"
+    },
+    {
+     "id": "C0E1Px9ebps",
+     "title": "美国百指日报·晚间速报｜10月30日：就业成本涨0.8%放缓，纳指跌2.86%，英特尔暴跌28.6%",
+     "url": "https://www.youtube.com/watch?v=C0E1Px9ebps",
+     "thumb": "https://i4.ytimg.com/vi/C0E1Px9ebps/hqdefault.jpg",
+     "published": "2026-10-31"
+    },
+    {
+     "id": "V9uvzq46_yg",
+     "title": "湾区福利速报｜2026年10月30日：3个新机会：感恩节食品礼卡登记11月6日截止",
+     "url": "https://www.youtube.com/watch?v=V9uvzq46_yg",
+     "thumb": "https://i3.ytimg.com/vi/V9uvzq46_yg/hqdefault.jpg",
+     "published": "2026-10-31"
+    },
+    {
+     "id": "1Gumj5nDqHk",
+     "title": "湾区本地速报 2026-10-30｜洪水提示延长到周日，今天下午再迎最高潮",
+     "url": "https://www.youtube.com/watch?v=1Gumj5nDqHk",
+     "thumb": "https://i2.ytimg.com/vi/1Gumj5nDqHk/hqdefault.jpg",
+     "published": "2026-10-30"
+    },
+    {
+     "id": "0p-nrO4EEGA",
+     "title": "美国百指日报·晚间速报｜10月29日：GDP增长3.4%超预期，纳指跌1.38%，亚马逊云大涨39%",
+     "url": "https://www.youtube.com/watch?v=0p-nrO4EEGA",
+     "thumb": "https://i1.ytimg.com/vi/0p-nrO4EEGA/hqdefault.jpg",
+     "published": "2026-10-30"
+    },
+    {
+     "id": "0e9hQ4i6JEY",
+     "title": "湾区福利速报｜2026年10月29日：3个新机会：圣何塞科技馆11月8日全天免费",
+     "url": "https://www.youtube.com/watch?v=0e9hQ4i6JEY",
+     "thumb": "https://i1.ytimg.com/vi/0e9hQ4i6JEY/hqdefault.jpg",
+     "published": "2026-10-30"
+    },
+    {
+     "id": "8NBUzqCGM-U",
+     "title": "《美国百指日报》2026-10-29｜三季度GDP增长3.4%超预期，核心PCE同比3.1%仍烫手",
+     "url": "https://www.youtube.com/watch?v=8NBUzqCGM-U",
+     "thumb": "https://i1.ytimg.com/vi/8NBUzqCGM-U/hqdefault.jpg",
+     "published": "2026-10-29"
+    }
+   ]
+  }
  ]
 }
